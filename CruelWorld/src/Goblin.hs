@@ -2,18 +2,19 @@ module Goblin
     (
       Goblin
     , goblin
+    , armedGoblin
     ) where
 
 import Creature
 import Attacker
-import Weapon
+import qualified Weapon
 
 data Goblin = Goblin 
     { _name :: String
     , _currentHp :: Int
     , _maxHp :: Int
     , _damage :: Int
-    , _weapon :: Maybe Weapon
+    , _weapon :: Maybe Weapon.Weapon
     }
 
 instance Creature Goblin where
@@ -28,7 +29,12 @@ instance Creature Goblin where
               weapon' = _weapon goblin
 
 instance Attacker Goblin where
-    damage = _damage
+    damage goblin = case _weapon goblin of
+      Just weapon -> _damage goblin + Weapon.damage weapon
+      Nothing     -> _damage goblin
 
 goblin :: String -> Int -> Int -> Goblin
 goblin name maxHp damage = Goblin name maxHp maxHp damage Nothing
+
+armedGoblin :: String -> Int -> Int -> Weapon.Weapon -> Goblin
+armedGoblin name maxHp damage weapon = Goblin name maxHp maxHp damage (Just weapon)

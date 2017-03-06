@@ -2,6 +2,7 @@ module Weapon
     (
       Weapon
     , weapon
+    , damage
     ) where
 
 data Weapon = Weapon 
@@ -14,3 +15,6 @@ instance Show Weapon where
 
 weapon :: String -> Int -> Weapon
 weapon = Weapon
+
+damage :: Weapon -> Int
+damage = _damage
