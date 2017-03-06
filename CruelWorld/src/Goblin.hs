@@ -5,12 +5,14 @@ module Goblin
     ) where
 
 import Creature
+import Weapon
 
 data Goblin = Goblin 
     { _name :: String
     , _currentHp :: Int
     , _maxHp :: Int
     , _damage :: Int
+    , _weapon :: Maybe Weapon
     }
 
 instance Creature Goblin where
@@ -20,4 +22,4 @@ instance Creature Goblin where
     damage    = _damage
 
 goblin :: String -> Int -> Int -> Goblin
-goblin name maxHp damage = Goblin name maxHp maxHp damage
+goblin name maxHp damage = Goblin name maxHp maxHp damage Nothing
