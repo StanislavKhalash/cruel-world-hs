@@ -13,4 +13,4 @@ instance Show Weapon where
     show (Weapon name _) = name
 
 weapon :: String -> Int -> Weapon
-weapon name damage = Weapon name damage
+weapon = Weapon

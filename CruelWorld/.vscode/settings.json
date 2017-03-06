@@ -1,0 +1,5 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "haskell.hlint.executablePath": "C:/Users/Stanislav/AppData/Roaming/local/bin/hlint",
+    "haskell.hlint.ignore": ["Redundant do"]
+}

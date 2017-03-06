@@ -20,8 +20,12 @@ instance Creature Goblin where
     name              = _name
     currentHp         = _currentHp
     maxHp             = _maxHp
-    receiveDamage c dmg = Goblin _name c hpAfterDmg c _maxHp _damage c _weapon c
-        where hpAfterDmg = max _currentHp-dmg 0
+    receiveDamage dmg goblin = Goblin name' currentHp' maxHp' damage' weapon'
+        where name' = _name goblin
+              currentHp' = max 0 (_currentHp goblin - dmg)
+              maxHp' = _maxHp goblin
+              damage' = _damage goblin
+              weapon' = _weapon goblin
 
 instance Attacker Goblin where
     damage = _damage
