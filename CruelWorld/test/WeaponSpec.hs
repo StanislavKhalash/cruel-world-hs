@@ -1,6 +1,7 @@
 module WeaponSpec where
 
 import Test.Hspec
+
 import Weapon
 
 spec :: Spec

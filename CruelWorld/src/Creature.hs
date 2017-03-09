@@ -8,3 +8,6 @@ class Creature a where
 
 isAlive :: Creature a => a -> Bool
 isAlive x = currentHp x > 0
+
+isDead :: Creature a => a -> Bool
+isDead = not . isAlive
