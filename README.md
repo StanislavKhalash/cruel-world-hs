@@ -1,5 +1,5 @@
 # cruel-world-hs
-[![Build status][travis]
+![Build status][travis]
 
 Please, design domain model classes and implement following game mechanics.
 There are three races: ogres, goblins and sheeps. Ogres can eat goblins and sheeps. Goblins can eat each other and sheeps. All races can attack each other. Ogres and goblins can use weapons.
